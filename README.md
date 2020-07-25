@@ -31,9 +31,9 @@ Generate your first service (example restaurant)
 $ npm run generate
 ```
 
-Create Model -> restaurant -> Output path: ./app/models/
-Create Service -> restaurant -> Output path: ./app/services/restaurant
-Create Migration -> restaurant -> Output path: ./database/migrations/restaurant.js
+Create Model -> restaurant -> Output path: ./app/models/  
+Create Service -> restaurant -> Output path: ./app/services/restaurant  
+Create Migration -> restaurant -> Output path: ./database/migrations/restaurant.js  
 Create Seed -> restaurant -> Output path: ./database/seeds/restaurant.js
 
 ```sh
@@ -53,12 +53,12 @@ $ npm run dev
 ```
 
 _Urls :_
-GET http://localhost:3030/api/restaurant/
-GET http://localhost:3030/api/restaurant/1
-POST http://localhost:3030/api/restaurant/ (with body json {name:"foo"} )
-PUT http://localhost:3030/api/restaurant/ (with body json {id:1,name:"foo correct"} )
+GET http://localhost:3030/api/restaurant/  
+GET http://localhost:3030/api/restaurant/1  
+POST http://localhost:3030/api/restaurant/ (with body json {name:"foo"} )  
+PUT http://localhost:3030/api/restaurant/ (with body json {id:1,name:"foo correct"} )  
 DELETE http://localhost:3030/api/restaurant/1
 
-_In progress :_
-JWT
+_In progress :_  
+JWT  
 Permissions/Groups/Roles
