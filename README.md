@@ -17,7 +17,7 @@ My personnal starter for fastify project.
 
 ### Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) to run.
+requires [Node.js](https://nodejs.org/) to run.
 
 Clone, install the dependencies and devDependencies and start the server.
 
@@ -52,7 +52,7 @@ Launch the server
 $ npm run dev
 ```
 
-_Urls :_
+_Urls :_  
 GET http://localhost:3030/api/restaurant/  
 GET http://localhost:3030/api/restaurant/1  
 POST http://localhost:3030/api/restaurant/ (with body json {name:"foo"} )  
