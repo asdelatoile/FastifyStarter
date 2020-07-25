@@ -1,0 +1,39 @@
+{
+  "name": "FastifyStarter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app/server.js",
+    "generate": "node ./tools/generate.js",
+    "db:migrate": "npx knex migrate:latest",
+    "db:seed": "npx knex seed:run",
+    "db:delete": "node ./database/delete.js",
+    "db:reset": "npm run db:delete && npm run db:migrate && npm run db:seed"
+  },
+  "keywords": [
+    "fastify",
+    "objection",
+    "knex",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@exodus/schemasafe": "^1.0.0-rc.1",
+    "accesscontrol": "^2.2.1",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.1",
+    "fastify": "^3.1.1",
+    "fastify-jwt": "^2.1.2",
+    "fastify-plugin": "^2.0.1",
+    "i18n": "^0.10.0",
+    "knex": "^0.21.2",
+    "objection": "^2.2.1",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "generate-template-files": "^3.0.0"
+  }
+}

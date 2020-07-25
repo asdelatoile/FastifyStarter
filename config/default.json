@@ -1,0 +1,31 @@
+{
+  "server": {
+    "port": 3030
+  },
+  "fastify": {
+    "logger": true
+  },
+  "database": {
+    "client": "sqlite3",
+    "useNullAsDefault": true,
+    "connection": {
+      "filename": "./database/api.sqlite"
+    }
+  },
+  "i18n": {
+    "locales": ["fr", "en"],
+    "defaultLocale": "fr",
+    "directory": "./app/locales",
+    "objectNotation": true,
+    "multiDirectories": true
+  },
+  "jwt": {
+    "secret": "b6d8a00f8f0c03930b8b7b4175a5f9f9",
+    "sign": {
+      "expiresIn": "10d"
+    },
+    "verify": {
+      "maxAge": "10d"
+    }
+  }
+}
