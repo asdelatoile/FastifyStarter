@@ -1,19 +1,10 @@
 {
-	"usernotfound": "Utilisateur inexistant",
-	"useralredyexist": "Utilisateur déjà existant",
-	"success": "Succès",
-	"wrongemailorpassword": "Mauvais email ou mot de passe",
-	"badrequest": "Mauvaise requête",
-	"unauthorized": "Non autorisé",
-	"youdonthavepermission": "Vous n'avez pas les permissions",
-	"tokenproblem": "Problème token",
-	"error": {
-		"BadRequest": "error.BadRequest"
-	},
-	"#/required": "#/required",
-	"#/hello": "#/hello",
-	"#/properties/username/minLength": "#/properties/username/minLength",
-	"#/username": "#/username",
-	"#/additionalProperties": "#/additionalProperties",
-	"#/coucou": "#/coucou"
+  "usernotfound": "Utilisateur inexistant",
+  "useralredyexist": "Utilisateur déjà existant",
+  "success": "Succès",
+  "wrongemailorpassword": "Mauvais email ou mot de passe",
+  "badrequest": "Mauvaise requête",
+  "unauthorized": "Non autorisé",
+  "youdonthavepermission": "Vous n'avez pas les permissions",
+  "tokenproblem": "Problème token"
 }
