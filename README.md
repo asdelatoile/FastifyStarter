@@ -46,6 +46,8 @@ Add your service in server.js
 fastify.register(require("./services/restaurant"));
 ```
 
+Add your model in app/plugins/database.js
+
 Launch the server
 
 ```sh

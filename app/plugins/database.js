@@ -5,7 +5,7 @@ const { Model } = require('objection')
 
 const User = require('./../models/user.model.js')
 const Role = require('./../models/role.model.js')
-const Restaurant = require('./../models/restaurant.model.js')
+// const Restaurant = require('./../models/restaurant.model.js')
 
 
 function database(fastify, options, next) {
@@ -16,7 +16,7 @@ function database(fastify, options, next) {
         knex: knexConnection,
         User,
         Role,
-        Restaurant
+        // Restaurant
     }
 
     Model.knex(knexConnection)
