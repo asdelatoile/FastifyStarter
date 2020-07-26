@@ -21,7 +21,8 @@ fastify.register(require('./plugins/authenticate'), config.jwt)
 fastify.register(require('./plugins/permission'))
 
 // MODULES
-// fastify.register(require('./services/restaurant'));
+fastify.register(require('./services/auth'));
+fastify.register(require('./services/restaurant'));
 
 
 // SERVER

@@ -7,14 +7,15 @@ module.exports = fp(async function (fastify, opts) {
         return function (data) {
             const validate = validator(schema, { includeErrors: true, allErrors: true })
             if (!validate(data)) {
+                console.log(JSON.stringify(validate.errors));
                 validate.errors.forEach(element => {
-                    const module = schema.id;
+                    const module = schema.title;
                     var problemTemp = element.keywordLocation.split("/");
                     var problem = problemTemp[problemTemp.length - 1];
                     var fieldTemp = element.instanceLocation.split("/");
                     var field = fieldTemp[fieldTemp.length - 1];
-                    const temp = fastify.i18n.__('properties.' + field, module);
-                    element.message = fastify.i18n.__('validation.' + problem, temp, module);
+                    const temp = fastify.i18n.__(module + '.properties.' + field);
+                    element.message = fastify.i18n.__(module + '.validation.' + problem, temp);
                 });
                 return { error: validate.errors }
             };

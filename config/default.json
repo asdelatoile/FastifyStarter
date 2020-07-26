@@ -16,8 +16,7 @@
     "locales": ["fr", "en"],
     "defaultLocale": "fr",
     "directory": "./app/locales",
-    "objectNotation": true,
-    "multiDirectories": true
+    "objectNotation": true
   },
   "jwt": {
     "secret": "b6d8a00f8f0c03930b8b7b4175a5f9f9",

@@ -12,6 +12,7 @@ const object = {
 
 const all = {
     headers: {
+        title: '__service__',
         type: 'object',
         properties: {
         },
@@ -31,12 +32,14 @@ const all = {
 
 const get = {
     headers: {
+        title: '__service__',
         type: 'object',
         properties: {
         },
         required: []
     },
     params: {
+        title: '__service__',
         type: 'object',
         required: ['recordId'],
         properties: {
@@ -57,12 +60,14 @@ const get = {
 
 const post = {
     headers: {
+        title: '__service__',
         type: 'object',
         properties: {
         },
         required: []
     },
     body: {
+        title: '__service__',
         type: 'object',
         properties: {
             name: { type: 'string' }
@@ -84,12 +89,14 @@ const post = {
 
 const put = {
     headers: {
+        title: '__service__',
         type: 'object',
         properties: {
         },
         required: []
     },
     body: {
+        title: '__service__',
         type: 'object',
         properties: {
             id: { type: 'integer' },
@@ -112,12 +119,14 @@ const put = {
 
 const del = {
     headers: {
+        title: '__service__',
         type: 'object',
         properties: {
         },
         required: []
     },
     params: {
+        title: '__service__',
         type: 'object',
         required: ['recordId'],
         properties: {

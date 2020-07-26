@@ -1,10 +1,23 @@
 {
-  "usernotfound": "Utilisateur inexistant",
-  "useralredyexist": "Utilisateur déjà existant",
-  "success": "Succès",
-  "wrongemailorpassword": "Mauvais email ou mot de passe",
-  "badrequest": "Mauvaise requête",
-  "unauthorized": "Non autorisé",
-  "youdonthavepermission": "Vous n'avez pas les permissions",
-  "tokenproblem": "Problème token"
+	"auth": {
+		"validation": {
+			"required": "%s obligatoire",
+			"type": "auth.validation.type"
+		},
+		"properties": {
+			"authorization": "Authorization",
+			"#": "auth.properties.#",
+			"email": "auth.properties.email",
+			"password": "auth.properties.password"
+		},
+		"UserAlredyExist": "auth.UserAlredyExist",
+		"WrongEmailorPassword": "auth.WrongEmailorPassword"
+	},
+	"error": {
+		"BadRequest": "Mauvaise requête",
+		"TypeError": "Mauvais type",
+		"Error": "Erreur",
+		"UnauthorizedError": "Non autorisé",
+		"Token": "error.Token"
+	}
 }

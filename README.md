@@ -46,8 +46,6 @@ Add your service in server.js
 fastify.register(require("./services/restaurant"));
 ```
 
-Add your model in app/plugins/database.js
-
 Launch the server
 
 ```sh
@@ -60,6 +58,10 @@ GET http://localhost:3030/api/restaurant/1
 POST http://localhost:3030/api/restaurant/ (with body json {name:"foo"} )  
 PUT http://localhost:3030/api/restaurant/ (with body json {id:1,name:"foo correct"} )  
 DELETE http://localhost:3030/api/restaurant/1
+
+POST http://localhost:3030/api/auth/login (with body json {email:"guest@demo.com","password":"demo"} )  
+POST http://localhost:3030/api/auth/register (with body json {email:"guest@demo.com","password":"demo"} )  
+GET http://localhost:3030/api/auth/me (with Bearer )
 
 _In progress :_  
 JWT  

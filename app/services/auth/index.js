@@ -2,14 +2,15 @@
 const fp = require("fastify-plugin")
 
 module.exports = fp(async function (fastify, opts) {
-    fastify.decorate('__service__', {
+    fastify.decorate('auth', {
         handlers: require('./actions'),
         schemas: require('./schemas'),
     })
+    // console.log("auth")
     fastify.register(require('./routes'), {
-        prefix: 'api/__service__',
+        prefix: 'api/auth',
         config: {
-            module: '__service__'
+            module: 'auth'
         }
     })
 })
