@@ -11,6 +11,7 @@ function permission(fastify, options, next) {
     if (!fastify.ac) {
         fastify.decorate('ac', ac)
         fastify.decorate("perm", async function (request, reply) {
+            console.log(request.user);
             let userRoles = request.user.roles.map((acc) => acc.name)
             const permission = await ac.can(userRoles).execute(reply.context.config.action).on(reply.context.config.module)
             if (permission.granted) {
