@@ -30,6 +30,7 @@
     "http-errors": "^1.8.0",
     "i18n": "^0.10.0",
     "knex": "^0.21.2",
+    "nodemailer": "^6.4.10",
     "objection": "^2.2.1",
     "role-acl": "^4.5.4",
     "sqlite3": "^5.0.0"

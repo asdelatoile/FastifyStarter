@@ -7,6 +7,7 @@ exports.up = async function (knex) {
         table.string('googleId').nullable();
         table.string('facebookId').nullable();
         table.string('twitterId').nullable();
+        table.boolean('active').default(false);
         table.timestamp('createdAt');
         table.timestamp('updatedAt');
     })

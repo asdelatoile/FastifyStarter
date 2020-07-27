@@ -14,6 +14,7 @@ My personnal starter for fastify project.
 - jwt
 - lorenwest/node-config
 - codeBelt/generate-template-files
+- nodemailer
 
 ### Installation
 
@@ -73,5 +74,5 @@ DELETE http://localhost:3030/api/user/1 (superadmin permission)
 Insomnia export in "tools" for tests
 
 _In progress :_  
-JWT  
 Permissions/Groups/Roles
+Email verification option

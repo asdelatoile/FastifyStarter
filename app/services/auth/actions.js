@@ -18,8 +18,17 @@ async function register(request, reply) {
         {
             relate: true
         });
-    const token = await this.generateToken({ id: user.id });
-    reply.code(201).send({ data: { token } })
+    if (this.config.api.emailVerification) {
+        const emailToken = await this.generateToken({ email: email });
+        this.auth.helpers.verifEmail(email, emailToken);
+        reply.code(201).send({ success: true, message: 'checkEmail' })
+    } else {
+        await User.query().patchAndFetchById(user.id, { active: true })
+        const token = await this.generateToken({ id: user.id });
+        reply.code(201).send({ data: { token } })
+    }
+
+
 }
 
 async function login(request, reply) {
@@ -33,6 +42,9 @@ async function login(request, reply) {
     const authorize = await user.verifyPassword(password);
     if (!authorize) {
         throw this.createError.Unauthorized(this.i18n.__('auth.WrongEmailorPassword'))
+    }
+    if (!user.active) {
+        throw this.createError.Unauthorized({ message: this.i18n.__('auth.EmailVerification') })
     }
     const token = await this.generateToken({ id: user.id });
     return reply.send({ data: { token } });

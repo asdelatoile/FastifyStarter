@@ -4,7 +4,7 @@ const config = require('config');
 const fastify = require('fastify')({
     ...config.fastify
 })
-fastify.decorate('i18nConfig', config.i18n)
+fastify.decorate('config', config)
 
 // PLUGINS
 // Database
@@ -19,6 +19,8 @@ fastify.register(require('./plugins/i18n'), config.i18n)
 fastify.register(require('./plugins/authenticate'), config.jwt)
 // Permissions
 fastify.register(require('./plugins/permission'))
+// Mail
+fastify.register(require('./plugins/mailer'), config.nodemailer)
 
 // MODULES
 fastify.register(require('./services/user'));

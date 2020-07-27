@@ -54,24 +54,24 @@ const register = {
         additionalProperties: false,
         required: ['email', 'password']
     },
-    response: {
-        200: {
-            type: 'object',
-            required: ['data'],
-            properties: {
-                data: {
-                    type: 'object',
-                    properties: {
-                        token: {
-                            type: 'string'
-                        }
+    // response: {
+    //     200: {
+    //         type: 'object',
+    //         required: ['data'],
+    //         properties: {
+    //             data: {
+    //                 type: 'object',
+    //                 properties: {
+    //                     token: {
+    //                         type: 'string'
+    //                     }
 
-                    }
-                }
-            },
-            additionalProperties: false
-        }
-    }
+    //                 }
+    //             }
+    //         },
+    //         additionalProperties: false
+    //     }
+    // }
 }
 
 const login = {

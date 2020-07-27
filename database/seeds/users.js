@@ -10,6 +10,7 @@ exports.seed = async function (knex) {
       id: 1,
       email: 'guest@test.com',
       password: hash,
+      active: true,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     },
@@ -17,6 +18,7 @@ exports.seed = async function (knex) {
       id: 2,
       email: 'admin@test.com',
       password: hash,
+      active: true,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     },
@@ -24,6 +26,7 @@ exports.seed = async function (knex) {
       id: 3,
       email: 'superadmin@test.com',
       password: hash,
+      active: true,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     }
