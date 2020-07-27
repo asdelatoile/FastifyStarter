@@ -59,9 +59,18 @@ POST http://localhost:3030/api/restaurant/ (with body json {name:"foo"} )
 PUT http://localhost:3030/api/restaurant/ (with body json {id:1,name:"foo correct"} )  
 DELETE http://localhost:3030/api/restaurant/1
 
+_Others :_  
 POST http://localhost:3030/api/auth/login (with body json {email:"guest@demo.com","password":"demo"} )  
 POST http://localhost:3030/api/auth/register (with body json {email:"guest@demo.com","password":"demo"} )  
 GET http://localhost:3030/api/auth/me (with Bearer )
+
+GET http://localhost:3030/api/user/ (superadmin permission)  
+GET http://localhost:3030/api/user/1 (superadmin permission)  
+POST http://localhost:3030/api/user/ (with body json {email:"foo", password:"", etc...} ) (superadmin permission)  
+PUT http://localhost:3030/api/user/ (with body json {id:1,foo1:"foo",foo2:"foo2"}) (superadmin permission)  
+DELETE http://localhost:3030/api/user/1 (superadmin permission)
+
+Insomnia export in "tools" for tests
 
 _In progress :_  
 JWT  
