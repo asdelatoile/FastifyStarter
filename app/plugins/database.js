@@ -6,19 +6,13 @@ const { Model } = require('objection')
 const modelsFolder = __dirname + '/../models/';
 const fs = require('fs');
 
-const User = require('./../models/user.model.js')
-const Role = require('./../models/role.model.js')
-// const Restaurant = require('./../models/restaurant.model.js')
-
 
 function database(fastify, options, next) {
 
     const knexConnection = Knex(options)
 
     const objection = {
-        knex: knexConnection,
-        User,
-        Role
+        knex: knexConnection
     }
 
     fs.readdir(modelsFolder, (err, files) => {
@@ -34,6 +28,10 @@ function database(fastify, options, next) {
 
     if (!fastify.objection) {
         fastify.decorate('objection', objection)
+        setTimeout(() => {
+            next()
+        }, 100);
+
     } else {
         next(new Error('objectionjs has already registered.'))
         return
@@ -44,7 +42,6 @@ function database(fastify, options, next) {
         done()
     })
 
-    next()
 }
 
 module.exports = fp(database)

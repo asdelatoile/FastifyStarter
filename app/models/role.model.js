@@ -23,6 +23,7 @@ class Role extends Model {
 
     static get relationMappings() {
         const User = require('./user.model')
+        const Permission = require('./permission.model')
         return {
             users: {
                 relation: Model.ManyToManyRelation,
@@ -35,8 +36,18 @@ class Role extends Model {
                     },
                     to: 'users.id'
                 }
+            },
+            permissions: {
+                relation: Model.HasManyRelation,
+                modelClass: Permission,
+                join: {
+                    from: 'roles.id',
+                    to: 'permissions.roleId'
+                }
             }
+
         };
+
     }
 }
 

@@ -1,15 +1,17 @@
 async function all(request, reply) {
     const { User
     } = this.objection;
-    const records = await User.query().throwIfNotFound();
-    return { data: records }
+    const testRecords = await User.query().withGraphJoined('[roles.[permissions]]').throwIfNotFound();
+    console.log(JSON.stringify(testRecords));
+    const records = await User.query().withGraphJoined('[roles]').throwIfNotFound();
+    return { data: testRecords }
 }
 
 async function get(request, reply) {
     const { recordId } = request.params;
     const { User
     } = this.objection;
-    const record = await User.query().findById(recordId).throwIfNotFound();
+    const record = await User.query().withGraphJoined('[roles]').findById(recordId).throwIfNotFound();
     reply.send({ data: record })
 }
 

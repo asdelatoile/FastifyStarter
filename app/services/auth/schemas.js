@@ -5,6 +5,9 @@ const object = {
     properties: {
         id: { type: 'integer' },
         email: { type: 'string' },
+        googleId: { type: 'string' },
+        facebookId: { type: 'string' },
+        twitterId: { type: 'string' },
         createdAt: { type: 'string' },
         updatedAt: { type: 'string' }
     }

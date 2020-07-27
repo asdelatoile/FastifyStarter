@@ -9,7 +9,15 @@ const object = {
         facebookId: { type: 'string' },
         twitterId: { type: 'string' },
         createdAt: { type: 'string' },
-        updatedAt: { type: 'string' }
+        updatedAt: { type: 'string' },
+        roles: {
+            type: 'array',
+            properties: {
+                permissions: {
+                    type: 'array'
+                }
+            }
+        }
     }
 }
 

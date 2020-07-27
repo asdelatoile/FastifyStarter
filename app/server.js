@@ -7,12 +7,12 @@ const fastify = require('fastify')({
 fastify.decorate('i18nConfig', config.i18n)
 
 // PLUGINS
+// Database
+fastify.register(require('./plugins/database'), config.database)
 // Validation
 fastify.register(require('./plugins/validation'))
 // Errors handler
 fastify.register(require('./plugins/error'))
-// Database
-fastify.register(require('./plugins/database'), config.database)
 // Lang
 fastify.register(require('./plugins/i18n'), config.i18n)
 // JWT

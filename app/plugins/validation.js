@@ -5,7 +5,6 @@ const { validator } = require('@exodus/schemasafe')
 module.exports = fp(async function (fastify, opts) {
     fastify.setValidatorCompiler(({ schema, method, url, httpStatus }) => {
         return function (data) {
-            // console.log(schema, method, url, httpStatus);
             const validate = validator(schema, { includeErrors: true, allErrors: true })
             if (!validate(data)) {
                 // console.log(JSON.stringify(validate.errors));
