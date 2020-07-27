@@ -1,5 +1,5 @@
 async function me(request, reply) {
-    reply.send({ data: request.user })
+    reply.send({ data: reply.permission.filter(request.user) })
 }
 
 async function register(request, reply) {

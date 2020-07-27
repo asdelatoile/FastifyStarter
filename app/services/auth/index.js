@@ -6,7 +6,6 @@ module.exports = fp(async function (fastify, opts) {
         handlers: require('./actions'),
         schemas: require('./schemas'),
     })
-    // console.log("auth")
     fastify.register(require('./routes'), {
         prefix: 'api/auth',
         config: {

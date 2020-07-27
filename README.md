@@ -9,7 +9,7 @@ My personnal starter for fastify project.
 - objection
 - i18n
 - @exodus/schemasafe
-- onury/accesscontrol
+- role-acl
 - bcryptjs
 - jwt
 - lorenwest/node-config

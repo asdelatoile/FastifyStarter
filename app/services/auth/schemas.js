@@ -33,7 +33,6 @@ const me = {
     }
 }
 
-
 const register = {
     headers: {
         title: 'auth',

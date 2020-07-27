@@ -1,22 +1,24 @@
 const fp = require('fastify-plugin')
-const AccessControl = require('accesscontrol');
+const AccessControl = require('role-acl');
 
 function permission(fastify, options, next) {
 
     let grantList = [
-        { role: 'admin', resource: 'video', action: 'create:any', attributes: '*, !views' },
-        { role: 'admin', resource: 'video', action: 'read:any', attributes: '*' },
-        { role: 'admin', resource: 'video', action: 'update:any', attributes: '*, !views' },
-        { role: 'admin', resource: 'video', action: 'delete:any', attributes: '*' },
-
-        { role: 'user', resource: 'video', action: 'create:own', attributes: '*, !rating, !views' },
-        { role: 'user', resource: 'video', action: 'read:own', attributes: '*' },
-        { role: 'user', resource: 'video', action: 'update:own', attributes: '*, !rating, !views' },
-        { role: 'user', resource: 'video', action: 'delete:own', attributes: '*' }
+        { role: 'superadmin', resource: '*', action: '*', attributes: '*' },
+        { role: 'guest', resource: 'auth', action: 'me', attributes: ['*', '!id', '!createdAt', '!updatedAt'] }
     ];
     const ac = new AccessControl(grantList);
     if (!fastify.ac) {
         fastify.decorate('ac', ac)
+        fastify.decorate("perm", async function (request, reply) {
+            let userRoles = request.user.roles.map((acc) => acc.name)
+            const permission = await ac.can(userRoles).execute(reply.context.config.action).on(reply.context.config.module)
+            if (permission.granted) {
+                reply.permission = permission;
+            } else {
+                throw fastify.createError.Unauthorized("Mauvaises permissions")
+            }
+        })
     } else {
         next(new Error('AC has already registered.'))
         return
